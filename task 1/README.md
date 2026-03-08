@@ -1,1 +1,2 @@
-# COMP-2090SEF-group-project
+topic: 
+inventory system, a library management system, calendar and flight scheduling system
