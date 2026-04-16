@@ -1,0 +1,10 @@
+from binarytree import Node as BNode
+
+# 建立節點（binarytree 自帶的 Node 類別支援直接 print）
+root = BNode(10)
+root.left = BNode(5)
+root.right = BNode(15)
+root.left.left = BNode(2)
+root.left.right = BNode(7)
+
+print(root)
