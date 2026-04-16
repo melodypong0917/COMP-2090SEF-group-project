@@ -3,10 +3,19 @@ a. data structure: binary tree
 b. algorithm: shell sort
 
 Data Structure User Guide:
-1.
+1. Install the DataStructure.py
+2. Add a new variable inside (Use "binary" as an example)
+    binary = Node("The key of the root")
+    binary.left = Node("The key of the node")
+    binary.right = Node("The key of the node")
+    binary.left.left = Node("The key of the node")
+    binary.left.right = Node("The key of the node")
+3. Add a display_tree() function and put the variable that yo ucreate inside
+    display_tree(binary)
+4. The binary tree will be shown
 
 Algorithm User Guide:
-1. Install the Algorithm file
+1. Install the Algorithm.py
 2. Run the file using GitHub
 3. Type the numbers that you want to sort (Please separate them by ",") (e.g. "76,81,24,35,11,90,45")
 4. Press "Enter"
