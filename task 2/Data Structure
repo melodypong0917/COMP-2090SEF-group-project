@@ -1,11 +1,26 @@
+# 1. 先定義類別
+class Node:
+    def __init__(self, value):
+        self.val = value
+        self.left = None
+        self.right = None
 
-from binarytree import Node as BNode
+# 2. 定義顯示函數
+def display_tree(node, level=0, prefix="Root: "):
+    if node is not None:
+        print(" " * (level * 4) + prefix + str(node.val))
+        if node.left or node.right:
+            if node.left:
+                display_tree(node.left, level + 1, "L--- ")
+            if node.right:
+                display_tree(node.right, level + 1, "R--- ")
 
-# 建立節點（binarytree 自帶的 Node 類別支援直接 print）
-root = BNode(10)
-root.left = BNode(5)
-root.right = BNode(15)
-root.left.left = BNode(2)
-root.left.right = BNode(7)
+# 3. 實例化 root (這一步沒做，就會報錯 "root is not defined")
+root = Node(1)
+root.left = Node(2)
+root.right = Node(3)
+root.right.left = Node(4)
+root.right.right = Node(5)
 
-print(root)
+# 4. 最後才呼叫函數
+display_tree(root)
