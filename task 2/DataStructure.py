@@ -67,5 +67,12 @@ exam.right.right = Node("Re-exam")
 exam.right.left.left = Node("Promote")
 exam.right.left.right = Node("Retake")
 
+root = Node("1")
+root.left = Node("2")
+root.right = Node("3")
+root.left.left = Node("4")
+root.left.right = Node("5")
+
 display_tree(abc)
 display_tree(exam)
+display_tree(root)
