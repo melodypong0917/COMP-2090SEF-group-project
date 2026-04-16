@@ -2,6 +2,8 @@ topic:
 a. data structure: binary tree
 b. algorithm: shell sort
 
+Introduction video:
+
 Data Structure User Guide:
 1. Install the DataStructure.py
 2. Add a new variable inside (Use "binary" as an example)

@@ -1,5 +1,7 @@
 topic: inventory system
 
+Introduction video:
+
 Inventory System User Guide
 1. Install the all files
 2. Open all the files using GitHub
