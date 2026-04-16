@@ -18,7 +18,7 @@ Data Structure User Guide:
 
 Algorithm User Guide:
 1. Install the Algorithm.py
-2. Run the file using GitHub
+2. Run the file using VS code
 3. Type the numbers that you want to sort (Please separate them by ",") (e.g. "76,81,24,35,11,90,45")
 4. Press "Enter"
 5. The sorted numbers will be shown

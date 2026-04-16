@@ -4,7 +4,7 @@ Introduction video:
 
 Inventory System User Guide
 1. Install the all files
-2. Open all the files using GitHub
+2. Open all the files using VS code
 3. Run the main.py
 
 There will be 7 actions to be chosen, you can choose the action by entering the according number.
