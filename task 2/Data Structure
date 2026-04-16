@@ -4,14 +4,55 @@ class Node:
         self.left = None
         self.right = None
 
-def display_tree(node, level=0, prefix="Root: "):
-    if node is not None:
-        print(" " * (level * 4) + prefix + str(node.val))
-        if node.left or node.right:
-            if node.left:
-                display_tree(node.left, level + 1, "L--- ")
-            if node.right:
-                display_tree(node.right, level + 1, "R--- ")
+def display_tree(node):
+    # This helper function recursively calculates the lines to represent each subtree
+    def get_lines(node):
+        # Base case: empty node
+        if not node:
+            return []
+        
+        label = str(node.val)
+        # Recursively get lines for left and right children
+        left = get_lines(node.left)
+        right = get_lines(node.right)
+        
+        # Case 1: Node is a leaf (no children)
+        if not left and not right:
+            return [label]
+        
+        # Case 2: Node only has a right child
+        if not left:
+            res = [label + "──┐"]
+            res.extend(["  " + line for line in right])
+            return res
+            
+        # Case 3: Node only has a left child
+        if not right:
+            res = ["┌──" + label]
+            res.extend([line + "  " for line in left])
+            return res
+            
+        # Case 4: Node has both children
+        width_l = len(left[0])
+        width_r = len(right[0])
+        
+        # Create the top line with the node's value centered
+        res = [" " * width_l + label + " " * width_r]
+        # Create the connecting bar using box-drawing characters
+        res.append("┌" + "─" * (width_l - 1) + "┴" + "─" * (width_r - 1) + "┐")
+        
+        # Zip together the left and right subtree representations
+        for i in range(max(len(left), len(right))):
+            l_line = left[i] if i < len(left) else " " * width_l
+            r_line = right[i] if i < len(right) else " " * width_r
+            res.append(l_line + " " + r_line)
+            
+        return res
+
+    # Print each line of the generated tree representation
+    for line in get_lines(node):
+        print(line)
+
 
 root = Node(1)
 root.left = Node(2)
