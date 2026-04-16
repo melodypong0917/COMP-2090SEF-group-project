@@ -12,5 +12,8 @@ Algorithm User Guide:
 4. Press "Enter"
 5. The sorted numbers will be shown
 
+Code reference --- Data Structure
+https://www.geeksforgeeks.org/python/binary-tree-in-python/
+
 Code reference --- Algorithm
 https://www.geeksforgeeks.org/python/python-program-for-shellsort/

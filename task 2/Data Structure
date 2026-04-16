@@ -1,63 +1,71 @@
 class Node:
-    def __init__(self, value):
-        self.val = value
+    def __init__(self, data):
+        self.data = data
         self.left = None
         self.right = None
 
 def display_tree(node):
-    # This helper function recursively calculates the lines to represent each subtree
     def get_lines(node):
-        # Base case: empty node
         if not node:
             return []
         
-        label = str(node.val)
-        # Recursively get lines for left and right children
+        label = str(node.data)
         left = get_lines(node.left)
         right = get_lines(node.right)
-        
-        # Case 1: Node is a leaf (no children)
+
         if not left and not right:
             return [label]
         
-        # Case 2: Node only has a right child
         if not left:
-            res = [label + "──┐"]
-            res.extend(["  " + line for line in right])
-            return res
+            edge = [label + "──┐"]
+            edge.extend(["  " + line for line in right])
+            return edge
             
-        # Case 3: Node only has a left child
-        if not right:
-            res = ["┌──" + label]
-            res.extend([line + "  " for line in left])
-            return res
-            
-        # Case 4: Node has both children
-        width_l = len(left[0])
-        width_r = len(right[0])
-        
-        # Create the top line with the node's value centered
-        res = [" " * width_l + label + " " * width_r]
-        # Create the connecting bar using box-drawing characters
-        res.append("┌" + "─" * (width_l - 1) + "┴" + "─" * (width_r - 1) + "┐")
-        
-        # Zip together the left and right subtree representations
-        for i in range(max(len(left), len(right))):
-            l_line = left[i] if i < len(left) else " " * width_l
-            r_line = right[i] if i < len(right) else " " * width_r
-            res.append(l_line + " " + r_line)
-            
-        return res
 
-    # Print each line of the generated tree representation
+        if not right:
+            edge = ["┌──" + label]
+            edge.extend([line + "  " for line in left])
+            return edge
+
+        left_width = len(left[0])
+        right_width = len(right[0])
+
+        edge = [" " * left_width + label + " " * right_width]
+        edge.append("┌" + "─" * (left_width - 1) + "┴" + "─" * (right_width - 1) + "┐")
+        
+        for i in range(max(len(left), len(right))):
+            left_line = left[i] if i < len(left) else " " * left_width
+            right_line = right[i] if i < len(right) else " " * right_width
+            edge.append(left_line + " " + right_line)
+            
+        return edge
+
     for line in get_lines(node):
         print(line)
 
+abc = Node("A")
+abc.left = Node("B")
+abc.right = Node("C")
+abc.left.left = Node("D")
+abc.left.right = Node("E")
+abc.right.left = Node("F")
+abc.right.right = Node("G")
+abc.left.left.left = Node("H")
+abc.left.left.right = Node("I")
+abc.right.left.left = Node("J")
+abc.right.left.right = Node("K")
+abc.right.right.left = Node("L")
+abc.right.right.right = Node("M")
 
-root = Node(1)
-root.left = Node(2)
-root.right = Node(3)
-root.right.left = Node(4)
-root.right.right = Node(5)
+exam = Node("Exam")
+exam.left = Node("Continuous assessment")
+exam.right = Node("Re-exam")
+exam.left.left = Node("Promote")
+exam.left.right = Node("Retake")
+exam.right.left = Node("Continuous assessment")
+exam.right.right = Node("Re-exam")
+exam.right.left.left = Node("Promote")
+exam.right.left.right = Node("Retake")
 
-display_tree(root)
+display_tree(abc)
+display_tree(exam)
