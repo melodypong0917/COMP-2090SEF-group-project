@@ -15,5 +15,3 @@ number_input = input("Enter numbers that you want to sort(PLease separate them b
 arr = [int(x) for x in number_input.split(",")]
 shell_ciura(arr)
 print(arr)
-
-23,11,45,67,34

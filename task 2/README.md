@@ -9,3 +9,6 @@ data structure
 algorithm
 1. time complexity
 2. example
+
+Code reference --- Algorithm
+https://www.geeksforgeeks.org/python/python-program-for-shellsort/
