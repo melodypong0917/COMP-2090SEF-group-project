@@ -2,7 +2,7 @@ topic:
 a. data structure: binary tree
 b. algorithm: shell sort
 
-Introduction video:
+Introduction video: https://youtu.be/2-FdVzi7UPU?si=YoR4AOn_vd3GjTE3
 
 Data Structure User Guide:
 1. Install the DataStructure.py

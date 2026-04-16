@@ -1,6 +1,6 @@
 topic: inventory system
 
-Introduction video:
+Introduction video: https://youtu.be/HqFHqPwTV1o?si=ByLkH4iN7eUe1aUG
 
 Inventory System User Guide
 1. Install the all files
