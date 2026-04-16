@@ -37,4 +37,6 @@ For the actions, you can choose to
     All the related inforamtion will be shown, such as the time that the actions is made.
 
 7. Exit
-    The system will be closed 
+    The system will be closed and all the actions made will be saved.
+    You can continue to used the data when you open the system again.
+    A JSON file will be saved to the file.
