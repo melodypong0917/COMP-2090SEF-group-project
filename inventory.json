@@ -1,0 +1,25 @@
+{
+    "items": [
+        {
+            "name": "we",
+            "type": "CategorizedStockItem",
+            "quantity": 34,
+            "base_price": 34.0,
+            "category": "2"
+        },
+        {
+            "name": "12",
+            "type": "StockItem",
+            "quantity": 12,
+            "base_price": 12.0,
+            "category": ""
+        },
+        {
+            "name": "w",
+            "type": "CategorizedStockItem",
+            "quantity": 4444444424,
+            "base_price": 34.3,
+            "category": "er"
+        }
+    ]
+}
