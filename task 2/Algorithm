@@ -1,17 +1,19 @@
 def shell_ciura(a):
     n = len(a)
-    gaps = [701, 301, 132, 57, 23, 10, 4, 1]
-    for g in gaps:
-        if g >= n: 
-            continue
-        for i in range(g, n):
-            t = a[i]
-            j = i
-            while j >= g and a[j-g] > t:
-                a[j] = a[j-g]
-                j -= g
-            a[j] = t
+    gap = n//2
+    while gap > 0:
+        for i in range(gap, n):
+            number_a = a[i]
+            number_b = i
+            while number_b >= gap and a[number_b-gap] > number_a:
+                a[number_b] = a[number_b-gap]
+                number_b = number_b - gap
+            a[number_b] = number_a
+        gap = gap//2
 
-arr = [12, 34, 54, 2, 3]
+number_input = input("Enter numbers that you want to sort(PLease separate them by ,):")
+arr = [int(x) for x in number_input.split(",")]
 shell_ciura(arr)
 print(arr)
+
+23,11,45,67,34
